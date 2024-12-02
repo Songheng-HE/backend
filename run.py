@@ -1,4 +1,6 @@
 from app import create_app, db
+from app.models import Subscription
+
 
 app = create_app()
 
