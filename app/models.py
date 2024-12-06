@@ -88,6 +88,7 @@ class Battle(db.Model):
 class TroopUsage(db.Model):
     __tablename__ = 'troop_usage'
     UsageID = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    BattleID = db.Column(db.Integer, db.ForeignKey('battles.BattleID'))  # 新增字段
     ConfigurationID = db.Column(db.Integer, db.ForeignKey('troop_configurations.ConfigurationID'), nullable=False)
     DateTime = db.Column(db.DateTime, nullable=False)
 

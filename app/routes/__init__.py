@@ -5,6 +5,9 @@ from .login import login_routes
 from .team_merit import team_merit_routes  # Import the team merit routes
 from .personal_troops import personal_troops_routes
 from .player_troops import player_troops_routes
+from .battle_field import battle_field_routes  # Import the battle field routes
+from .troop_usage import troop_usage_routes
+
 
 
 main = Blueprint('main', __name__)
@@ -16,3 +19,5 @@ main.register_blueprint(login_routes, url_prefix='/auth')
 main.register_blueprint(team_merit_routes, url_prefix='/team-merit-rank')  # Register the blueprint
 main.register_blueprint(personal_troops_routes, url_prefix='/api/personal-troops/<string:username>')
 main.register_blueprint(player_troops_routes, url_prefix='/api/player-troops/<string:nickname>')
+main.register_blueprint(battle_field_routes)  # Register the battle field blueprint
+main.register_blueprint(troop_usage_routes)
